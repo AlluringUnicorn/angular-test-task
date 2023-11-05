@@ -1,0 +1,34 @@
+.container {
+  margin: 15px 0;
+
+  .validation-bar {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+    background-color: gray;
+
+    .invalid {
+      width: 100% !important;
+      background-color: red !important;
+    }
+
+    .easy {
+      width: 10% !important;
+      background-color: red !important;
+    }
+
+    .medium {
+      width: 50% !important;
+      background-color: yellow !important;
+    }
+
+    .strong {
+      width: 100% !important;
+      background-color: green !important;
+    }
+
+  }
+}
+

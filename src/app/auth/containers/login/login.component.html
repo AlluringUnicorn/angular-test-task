@@ -1,0 +1,35 @@
+<div class="container">
+  <form class="inner-container" [formGroup]="loginForm" (ngSubmit)="submit()">
+
+    <div>
+      <label for="login">Login</label>
+      <input type="text" id="login"
+             [ngClass]="{'invalid' : (loginForm.controls['login'].dirty || loginForm.controls['login'].touched ) && loginForm.controls['login'].invalid}"
+             formControlName="login">
+      <span
+        *ngIf="(loginForm.controls['login'].dirty || loginForm.controls['login'].touched ) && loginForm.controls['login'].hasError('required')">  Login is required</span>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password"
+             [ngClass]="{'invalid' : (loginForm.controls['password'].dirty || loginForm.controls['password'].touched) && loginForm.controls['password'].invalid}"
+             formControlName="password">
+      <span
+        *ngIf="(loginForm.controls['password'].dirty || loginForm.controls['password'].touched ) && loginForm.controls['password'].hasError('required')">  Password is required</span>
+      <span
+        *ngIf="(loginForm.controls['password'].dirty || loginForm.controls['password'].touched ) && loginForm.controls['password'].hasError('minlength')">  Password should be at least 8 characters </span>
+    </div>
+
+    <app-validation-indicator
+      [shortPassword]="loginForm.controls['password'].hasError('minlength')"
+      [easy]="easy"
+      [medium]="medium"
+      [strong]="strong"
+    ></app-validation-indicator>
+
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>

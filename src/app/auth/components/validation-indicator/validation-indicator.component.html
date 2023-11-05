@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="validation-bar">
+    <div [ngClass]="{
+          'invalid': shortPassword && !easy && !medium && !strong,
+          'easy': easy && !medium && !strong,
+          'medium': medium && !strong,
+          'strong': strong
+          }">
+      &nbsp;
+    </div>
+  </div>
+
+  <div style="display: flex; width: 100%; justify-content: space-between">
+    <div>
+      <p *ngIf="easy">Easy</p>
+    </div>
+    <div>
+      <p *ngIf="medium">Medium</p>
+    </div>
+    <div>
+      <p *ngIf="strong">Strong</p>
+    </div>
+  </div>
+</div>
