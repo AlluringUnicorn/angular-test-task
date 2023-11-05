@@ -2,7 +2,7 @@
   <form class="inner-container" [formGroup]="loginForm" (ngSubmit)="submit()">
 
     <div>
-      <label for="login">Login</label>
+      <label for="login" class="label-login">Login</label>
       <input type="text" id="login"
              [ngClass]="{'invalid' : (loginForm.controls['login'].dirty || loginForm.controls['login'].touched ) && loginForm.controls['login'].invalid}"
              formControlName="login">
@@ -11,7 +11,7 @@
     </div>
 
     <div>
-      <label for="password">Password</label>
+      <label for="password" class="label-password">Password</label>
       <input type="password" id="password"
              [ngClass]="{'invalid' : (loginForm.controls['password'].dirty || loginForm.controls['password'].touched) && loginForm.controls['password'].invalid}"
              formControlName="password">
@@ -28,8 +28,8 @@
       [strong]="strong"
     ></app-validation-indicator>
 
-    <div>
-      <button type="submit">Submit</button>
+    <div class="button-container">
+      <button type="submit" class="button">Submit</button>
     </div>
   </form>
 </div>
