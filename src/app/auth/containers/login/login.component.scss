@@ -10,9 +10,7 @@
   max-width: 576px;
 }
 
-.invalid {
-  border-color: red;
-}
+
 
 #login {
   font-family: Raleway-SemiBold, sans-serif;
@@ -81,5 +79,8 @@ span {
   line-height: 1.4;
 }
 
+.invalid {
+  border-color: red !important;
+}
 
 
